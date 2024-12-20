@@ -1,4 +1,3 @@
-import LogoWithName from "@/public/authPageIcons/LogoWithName.png";
 import { SignInItemsSelf } from "@/constants/contants";
 import Image from "next/image";
 import Link from "next/link";
