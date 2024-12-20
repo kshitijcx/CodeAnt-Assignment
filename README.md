@@ -7,3 +7,6 @@ https://code-ant-kshitijcx.vercel.app/signin-sass
 # How to navigate
 1. Click SASS and Self Hosted buttons to move between different signin pages
 2. Click on any signin button to move to homepage
+# Built using
+1. NextJs
+2. Tailwind CSS
