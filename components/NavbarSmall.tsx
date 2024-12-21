@@ -6,7 +6,7 @@ import { NavbarItems, BottomNavItems } from "@/constants/contants";
 import Image from "next/image";
 import { useState } from "react";
 
-const NavbarSmall = () => {
+const NavbarSmall = ({ setIsOpen }: { setIsOpen: (val: boolean) => void }) => {
   const [open, setOpen] = useState(false);
   return (
     <div>
@@ -20,7 +20,12 @@ const NavbarSmall = () => {
         />
 
         {!open && (
-          <button onClick={() => setOpen(!open)}>
+          <button
+            onClick={() => {
+              setIsOpen(!open);
+              setOpen(!open);
+            }}
+          >
             <Image
               src={MenuIcon}
               alt="Menu Icon"
@@ -31,7 +36,12 @@ const NavbarSmall = () => {
           </button>
         )}
         {open && (
-          <button onClick={() => setOpen(!open)}>
+          <button
+            onClick={() => {
+              setIsOpen(!open);
+              setOpen(!open);
+            }}
+          >
             <Image
               src={CloseIcon}
               alt="Close Icon"
@@ -45,7 +55,7 @@ const NavbarSmall = () => {
       {open && (
         <div
           className={`flex flex-col gap-5 ${
-            open && "fixed left-0 top-14 h-full w-full bg-black bg-opacity-35"
+            open && "fixed left-0 top-14 w-full h-full bg-black bg-opacity-35"
           }`}
         >
           <div className="space-y-6 h-fit bg-white p-4">
@@ -98,7 +108,7 @@ const NavbarSmall = () => {
                 ))}
               </div>
             </div>
-            {open && (<div className=""></div>)}
+            {open && <div className=""></div>}
           </div>
         </div>
       )}
